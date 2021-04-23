@@ -1,0 +1,9 @@
+{
+    "categories": {
+        "0": "data (things)"
+    },
+    "description": "API connector to the Balena.io platform.  \n\n\"Balena is a complete set of tools for building, deploying, and managing fleets of connected Linux devices.\"\n\nMore info on the Balena platform can be found here? \nhttps://www.balena.io/what-is-balena \n\n\"The balena Supervisor is balena's agent that runs on devices. Its main role is to ensure your app is running, and keep communications with the balenaCloud API server.\"\n\nAPI Overview: https://www.balena.io/docs/reference/api/overview/\n\nSupervisor API: https://www.balena.io/docs/reference/supervisor/supervisor-api/",
+    "image": "//s3.amazonaws.com/appforest_uf/f1619186077056x217923127076801400/balena.8a0df240c7bcfb26c895abac224c9870dfe8baaf6c3b47183948d515dddcdec4.jpg",
+    "name": "Balena Supervisor API",
+    "plugin_instructions": "Plugin Setup:\n\n1. Generate Balena Cloud API key. Log into your Balena cloud account at https://balena.io. Navigate to your account --> Preferences --> Access Tokens --> Create API Key\n2. Enter API key in the plugin setup page"
+}

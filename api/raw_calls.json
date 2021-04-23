@@ -1,0 +1,56 @@
+{
+    "auth": "private_key_header",
+    "calls": {
+        "AAE": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"method\": \"GET\"\n}",
+            "body_params": {
+                "AAF": {
+                    "doc": "Balena device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "data_type": "text",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#get-ping",
+            "initialized": true,
+            "method": "post",
+            "name": "Ping a device",
+            "no_types": true,
+            "publish_as": "data",
+            "rank": 0,
+            "should_reinitialize": true,
+            "url": "https://api.balena-cloud.com/supervisor/ping"
+        },
+        "AAG": {
+            "body": "{\n\t\"uuid\": \"<uuid>\"\n}",
+            "body_params": {
+                "AAL": {
+                    "doc": "Balena device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": "d9dbfd2f487af8bc7a627d2a884e91a5"
+                }
+            },
+            "data_type": "text",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1blink",
+            "initialized": true,
+            "method": "post",
+            "name": "Blink LED on a device",
+            "no_types": true,
+            "publish_as": "data",
+            "rank": 1,
+            "should_reinitialize": true,
+            "url": "https://api.balena-cloud.com/supervisor/v1/blink"
+        }
+    },
+    "human": "Balena Supervisor API",
+    "shared_headers": {
+        "AAC": {
+            "key": "Content-Type",
+            "private": true,
+            "value": "application/json",
+            "visibility": "hidden"
+        }
+    }
+}
