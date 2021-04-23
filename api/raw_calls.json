@@ -29,7 +29,7 @@
                     "doc": "Balena device UUID",
                     "key": "uuid",
                     "private": true,
-                    "value": "d9dbfd2f487af8bc7a627d2a884e91a5"
+                    "value": ""
                 }
             },
             "data_type": "text",
@@ -42,6 +42,136 @@
             "rank": 1,
             "should_reinitialize": true,
             "url": "https://api.balena-cloud.com/supervisor/v1/blink"
+        },
+        "AAM": {
+            "body": "{\n\t\"uuid\": \"<uuid>\",\n    \"force\": <force>\n}",
+            "body_params": {
+                "AAN": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": "d9dbfd2f487af8bc7a627d2a884e91a5"
+                },
+                "AAX": {
+                    "doc": "Boolean True / False. If this property is true, the update lock will be overridden.",
+                    "key": "force",
+                    "private": true,
+                    "value": "true"
+                }
+            },
+            "data_type": "empty",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1update",
+            "get_headers": true,
+            "initialized": true,
+            "method": "post",
+            "name": "Trigger update check",
+            "publish_as": "data",
+            "rank": 2,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAM",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAM\":{\"caption\":\"Trigger update check\",\"fields\":{\"_p_body\":{\"ret_value\":\"text\",\"caption\":\"body\",\"sample_value\":null,\"path\":[\"body\"]},\"_p_headers.date\":{\"ret_value\":\"text\",\"caption\":\"headers date\",\"sample_value\":\"Fri, 23 Apr 2021 14:31:00 GMT\",\"path\":[\"headers\",\"date\"]},\"_p_headers.connection\":{\"ret_value\":\"text\",\"caption\":\"headers connection\",\"sample_value\":\"keep-alive\",\"path\":[\"headers\",\"connection\"]},\"_p_headers.x-frame-options\":{\"ret_value\":\"text\",\"caption\":\"headers x-frame-options\",\"sample_value\":\"DENY\",\"path\":[\"headers\",\"x-frame-options\"]},\"_p_headers.x-content-type-options\":{\"ret_value\":\"text\",\"caption\":\"headers x-content-type-options\",\"sample_value\":\"nosniff\",\"path\":[\"headers\",\"x-content-type-options\"]},\"_p_headers.vary\":{\"ret_value\":\"text\",\"caption\":\"headers vary\",\"sample_value\":\"X-HTTP-Method-Override\",\"path\":[\"headers\",\"vary\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/update"
+        },
+        "AAY": {
+            "body": "{\n\t\"uuid\": \"<uuid>\"\n}",
+            "body_params": {
+                "AAc": {
+                    "doc": "UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1reboot",
+            "initialized": true,
+            "method": "post",
+            "name": "Reboot a device",
+            "publish_as": "data",
+            "rank": 3,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAY",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAY\":{\"caption\":\"Device reboot\",\"fields\":{\"_p_Data\":{\"ret_value\":\"text\",\"caption\":\"Data\",\"sample_value\":\"OK\",\"path\":[\"Data\"]},\"_p_Error\":{\"ret_value\":\"text\",\"caption\":\"Error\",\"sample_value\":null,\"path\":[\"Error\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/reboot"
+        },
+        "AAd": {
+            "body": "{\n\t\"uuid\": \"<uuid>\"\n}",
+            "body_params": {
+                "AAe": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1shutdown",
+            "initialized": true,
+            "method": "post",
+            "name": "Shutdown a device",
+            "publish_as": "data",
+            "rank": 4,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAd",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAd\":{\"caption\":\"Shutdown a device\",\"fields\":{\"_p_Data\":{\"ret_value\":\"text\",\"caption\":\"Data\",\"sample_value\":\"OK\",\"path\":[\"Data\"]},\"_p_Error\":{\"ret_value\":\"text\",\"caption\":\"Error\",\"sample_value\":null,\"path\":[\"Error\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/shutdown"
+        },
+        "AAo": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"data\": {\"appId\": <appId>}\n}",
+            "body_params": {
+                "AAw": {
+                    "doc": "Device ID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                },
+                "AAx": {
+                    "doc": "Application ID",
+                    "key": "appId",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "data_type": "text",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1restart",
+            "get_headers": false,
+            "initialized": true,
+            "method": "post",
+            "name": "Restart user application container",
+            "no_types": true,
+            "params": {
+            },
+            "publish_as": "action",
+            "rank": 5,
+            "should_reinitialize": true,
+            "url": "https://api.balena-cloud.com/supervisor/v1/restart"
+        },
+        "AAr": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"method\": \"GET\"\n}",
+            "body_params": {
+                "AAs": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#get-v1device",
+            "initialized": true,
+            "method": "post",
+            "name": "Get device state",
+            "publish_as": "data",
+            "rank": 6,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAr",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAr\":{\"caption\":\"Get device state\",\"fields\":{\"_p_api_port\":{\"ret_value\":\"number\",\"caption\":\"api_port\",\"sample_value\":48484,\"path\":[\"api_port\"]},\"_p_ip_address\":{\"ret_value\":\"text\",\"caption\":\"ip_address\",\"sample_value\":\"192.168.1.184\",\"path\":[\"ip_address\"]},\"_p_os_version\":{\"ret_value\":\"text\",\"caption\":\"os_version\",\"sample_value\":\"balenaOS 2.73.1+rev1\",\"path\":[\"os_version\"]},\"_p_mac_address\":{\"ret_value\":\"text\",\"caption\":\"mac_address\",\"sample_value\":\"DC:A6:32:89:75:4E DC:A6:32:89:75:50\",\"path\":[\"mac_address\"]},\"_p_supervisor_version\":{\"ret_value\":\"text\",\"caption\":\"supervisor_version\",\"sample_value\":\"12.4.6\",\"path\":[\"supervisor_version\"]},\"_p_update_pending\":{\"ret_value\":\"boolean\",\"caption\":\"update_pending\",\"sample_value\":false,\"path\":[\"update_pending\"]},\"_p_update_failed\":{\"ret_value\":\"boolean\",\"caption\":\"update_failed\",\"sample_value\":false,\"path\":[\"update_failed\"]},\"_p_update_downloaded\":{\"ret_value\":\"boolean\",\"caption\":\"update_downloaded\",\"sample_value\":false,\"path\":[\"update_downloaded\"]},\"_p_commit\":{\"ret_value\":\"text\",\"caption\":\"commit\",\"sample_value\":\"a96f09e1bb3993f1e4b300095189378a\",\"path\":[\"commit\"]},\"_p_status\":{\"ret_value\":\"text\",\"caption\":\"status\",\"sample_value\":\"exited\",\"path\":[\"status\"]},\"_p_download_progress\":{\"ret_value\":\"text\",\"caption\":\"download_progress\",\"sample_value\":null,\"path\":[\"download_progress\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/device"
+        },
+        "AAt": {
+            "doc_link": "d9dbfd2f487af8bc7a627d2a884e91a5",
+            "method": "get",
+            "name": "API Call",
+            "publish_as": "data",
+            "rank": 7,
+            "should_reinitialize": true
         }
     },
     "human": "Balena Supervisor API",
