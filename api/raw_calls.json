@@ -17,7 +17,7 @@
             "method": "post",
             "name": "Ping a device",
             "no_types": true,
-            "publish_as": "data",
+            "publish_as": "action",
             "rank": 0,
             "should_reinitialize": true,
             "url": "https://api.balena-cloud.com/supervisor/ping"
@@ -38,7 +38,7 @@
             "method": "post",
             "name": "Blink LED on a device",
             "no_types": true,
-            "publish_as": "data",
+            "publish_as": "action",
             "rank": 1,
             "should_reinitialize": true,
             "url": "https://api.balena-cloud.com/supervisor/v1/blink"
@@ -65,7 +65,7 @@
             "initialized": true,
             "method": "post",
             "name": "Trigger update check",
-            "publish_as": "data",
+            "publish_as": "action",
             "rank": 2,
             "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAM",
             "should_reinitialize": true,
@@ -86,7 +86,7 @@
             "initialized": true,
             "method": "post",
             "name": "Reboot a device",
-            "publish_as": "data",
+            "publish_as": "action",
             "rank": 3,
             "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAY",
             "should_reinitialize": true,
@@ -107,7 +107,7 @@
             "initialized": true,
             "method": "post",
             "name": "Shutdown a device",
-            "publish_as": "data",
+            "publish_as": "action",
             "rank": 4,
             "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAd",
             "should_reinitialize": true,
@@ -140,7 +140,7 @@
             "params": {
             },
             "publish_as": "action",
-            "rank": 5,
+            "rank": 6,
             "should_reinitialize": true,
             "url": "https://api.balena-cloud.com/supervisor/v1/restart"
         },
@@ -159,18 +159,52 @@
             "method": "post",
             "name": "Get device state",
             "publish_as": "data",
-            "rank": 6,
+            "rank": 7,
             "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAr",
             "should_reinitialize": true,
             "types": "{\"plugin_api.AAr\":{\"caption\":\"Get device state\",\"fields\":{\"_p_api_port\":{\"ret_value\":\"number\",\"caption\":\"api_port\",\"sample_value\":48484,\"path\":[\"api_port\"]},\"_p_ip_address\":{\"ret_value\":\"text\",\"caption\":\"ip_address\",\"sample_value\":\"192.168.1.184\",\"path\":[\"ip_address\"]},\"_p_os_version\":{\"ret_value\":\"text\",\"caption\":\"os_version\",\"sample_value\":\"balenaOS 2.73.1+rev1\",\"path\":[\"os_version\"]},\"_p_mac_address\":{\"ret_value\":\"text\",\"caption\":\"mac_address\",\"sample_value\":\"DC:A6:32:89:75:4E DC:A6:32:89:75:50\",\"path\":[\"mac_address\"]},\"_p_supervisor_version\":{\"ret_value\":\"text\",\"caption\":\"supervisor_version\",\"sample_value\":\"12.4.6\",\"path\":[\"supervisor_version\"]},\"_p_update_pending\":{\"ret_value\":\"boolean\",\"caption\":\"update_pending\",\"sample_value\":false,\"path\":[\"update_pending\"]},\"_p_update_failed\":{\"ret_value\":\"boolean\",\"caption\":\"update_failed\",\"sample_value\":false,\"path\":[\"update_failed\"]},\"_p_update_downloaded\":{\"ret_value\":\"boolean\",\"caption\":\"update_downloaded\",\"sample_value\":false,\"path\":[\"update_downloaded\"]},\"_p_commit\":{\"ret_value\":\"text\",\"caption\":\"commit\",\"sample_value\":\"a96f09e1bb3993f1e4b300095189378a\",\"path\":[\"commit\"]},\"_p_status\":{\"ret_value\":\"text\",\"caption\":\"status\",\"sample_value\":\"exited\",\"path\":[\"status\"]},\"_p_download_progress\":{\"ret_value\":\"text\",\"caption\":\"download_progress\",\"sample_value\":null,\"path\":[\"download_progress\"]}}}}",
             "url": "https://api.balena-cloud.com/supervisor/v1/device"
         },
         "AAt": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"data\": {\"appId\": <appId>}\n}",
+            "body_params": {
+                "AAy": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                },
+                "AAz": {
+                    "doc": "Application ID",
+                    "key": "appId",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1purge",
+            "initialized": true,
+            "method": "post",
+            "name": "Purge (Clear an application's /data folder)",
+            "publish_as": "data",
+            "rank": 5,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.AAt",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAt\":{\"caption\":\"Purge (Clear an application's /data folder)\",\"fields\":{\"_p_Data\":{\"ret_value\":\"text\",\"caption\":\"Data\",\"sample_value\":\"OK\",\"path\":[\"Data\"]},\"_p_Error\":{\"ret_value\":\"text\",\"caption\":\"Error\",\"sample_value\":\"\",\"path\":[\"Error\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/purge"
+        },
+        "ABA": {
             "doc_link": "d9dbfd2f487af8bc7a627d2a884e91a5",
             "method": "get",
             "name": "API Call",
+            "params": {
+                "ABB": {
+                    "key": "",
+                    "private": true,
+                    "value": "1818420"
+                }
+            },
             "publish_as": "data",
-            "rank": 7,
+            "rank": 8,
             "should_reinitialize": true
         }
     },
