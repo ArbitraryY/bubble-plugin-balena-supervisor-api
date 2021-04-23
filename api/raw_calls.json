@@ -137,8 +137,6 @@
             "method": "post",
             "name": "Restart user application container",
             "no_types": true,
-            "params": {
-            },
             "publish_as": "action",
             "rank": 6,
             "should_reinitialize": true,
@@ -193,19 +191,142 @@
             "url": "https://api.balena-cloud.com/supervisor/v1/purge"
         },
         "ABA": {
-            "doc_link": "d9dbfd2f487af8bc7a627d2a884e91a5",
-            "method": "get",
-            "name": "API Call",
-            "params": {
-                "ABB": {
-                    "key": "",
+            "body": "{\n\t\"uuid\": \"<uuid>\"\n}",
+            "body_params": {
+                "ABF": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
                     "private": true,
-                    "value": "1818420"
+                    "value": ""
                 }
             },
-            "publish_as": "data",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1appsappidstop",
+            "initialized": true,
+            "method": "post",
+            "name": "Stop an application container (single container device only)",
+            "publish_as": "action",
             "rank": 8,
-            "should_reinitialize": true
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.ABA",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.ABA\":{\"caption\":\"Temporarily stop an application container\",\"fields\":{\"_p_containerId\":{\"ret_value\":\"text\",\"caption\":\"containerId\",\"sample_value\":\"3e8323c6f2f77bb899e12cac0c7921483953bd4c5a7d79aa75f694618712c798\",\"path\":[\"containerId\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/apps/[appId]/stop",
+            "url_params": {
+                "ABG": {
+                    "doc": "Application ID",
+                    "key": "appId",
+                    "private": true,
+                    "value": ""
+                }
+            }
+        },
+        "ABH": {
+            "body": "{\n\t\"uuid\": \"<uuid>\"\n}",
+            "body_params": {
+                "ABM": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#post-v1appsappidstart",
+            "initialized": true,
+            "method": "post",
+            "name": "Start an application on a container (single container devices only)",
+            "publish_as": "action",
+            "rank": 9,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.ABH",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.ABH\":{\"caption\":\"Start an application on a container (single container devices only)\",\"fields\":{\"_p_containerId\":{\"ret_value\":\"text\",\"caption\":\"containerId\",\"sample_value\":\"3e8323c6f2f77bb899e12cac0c7921483953bd4c5a7d79aa75f694618712c798\",\"path\":[\"containerId\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/apps/[appId]/start",
+            "url_params": {
+                "ABI": {
+                    "doc": "Application ID",
+                    "key": "appId",
+                    "private": true,
+                    "value": ""
+                }
+            }
+        },
+        "ABN": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"method\": \"GET\"\n}",
+            "body_params": {
+                "ABP": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#get-v1appsappid",
+            "initialized": true,
+            "method": "post",
+            "name": "Get application info on a running device (single-container device only)",
+            "publish_as": "data",
+            "rank": 10,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.ABN",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.ABN\":{\"caption\":\"Get application info on a running device (single-container device only)\",\"fields\":{\"_p_appId\":{\"ret_value\":\"number\",\"caption\":\"appId\",\"sample_value\":1818420,\"path\":[\"appId\"]},\"_p_commit\":{\"ret_value\":\"text\",\"caption\":\"commit\",\"sample_value\":\"a96f09e1bb3993f1e4b300095189378a\",\"path\":[\"commit\"]},\"_p_containerId\":{\"ret_value\":\"text\",\"caption\":\"containerId\",\"sample_value\":\"984baafad2d04d594b9730c13330ec15ffa479c65db63e63e72715ad081a0eb7\",\"path\":[\"containerId\"]},\"_p_env.BALENA_APP_ID\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_APP_ID\",\"sample_value\":\"1818420\",\"path\":[\"env\",\"BALENA_APP_ID\"]},\"_p_env.BALENA_APP_NAME\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_APP_NAME\",\"sample_value\":\"CASASIL\",\"path\":[\"env\",\"BALENA_APP_NAME\"]},\"_p_env.BALENA_SERVICE_NAME\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_SERVICE_NAME\",\"sample_value\":\"stocks\",\"path\":[\"env\",\"BALENA_SERVICE_NAME\"]},\"_p_env.BALENA_DEVICE_UUID\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_DEVICE_UUID\",\"sample_value\":\"91bbef0787dcd1511819521b1d2611dd\",\"path\":[\"env\",\"BALENA_DEVICE_UUID\"]},\"_p_env.BALENA_DEVICE_TYPE\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_DEVICE_TYPE\",\"sample_value\":\"raspberrypi3-64\",\"path\":[\"env\",\"BALENA_DEVICE_TYPE\"]},\"_p_env.BALENA_DEVICE_ARCH\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_DEVICE_ARCH\",\"sample_value\":\"aarch64\",\"path\":[\"env\",\"BALENA_DEVICE_ARCH\"]},\"_p_env.BALENA_HOST_OS_VERSION\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_HOST_OS_VERSION\",\"sample_value\":\"balenaOS 2.65.0+rev1\",\"path\":[\"env\",\"BALENA_HOST_OS_VERSION\"]},\"_p_env.BALENA_APP_LOCK_PATH\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_APP_LOCK_PATH\",\"sample_value\":\"/tmp/balena/updates.lock\",\"path\":[\"env\",\"BALENA_APP_LOCK_PATH\"]},\"_p_env.BALENA\":{\"ret_value\":\"text\",\"caption\":\"env BALENA\",\"sample_value\":\"1\",\"path\":[\"env\",\"BALENA\"]},\"_p_env.RESIN_APP_ID\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_APP_ID\",\"sample_value\":\"1818420\",\"path\":[\"env\",\"RESIN_APP_ID\"]},\"_p_env.RESIN_APP_NAME\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_APP_NAME\",\"sample_value\":\"CASASIL\",\"path\":[\"env\",\"RESIN_APP_NAME\"]},\"_p_env.RESIN_SERVICE_NAME\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_SERVICE_NAME\",\"sample_value\":\"stocks\",\"path\":[\"env\",\"RESIN_SERVICE_NAME\"]},\"_p_env.RESIN_DEVICE_UUID\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_DEVICE_UUID\",\"sample_value\":\"91bbef0787dcd1511819521b1d2611dd\",\"path\":[\"env\",\"RESIN_DEVICE_UUID\"]},\"_p_env.RESIN_DEVICE_TYPE\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_DEVICE_TYPE\",\"sample_value\":\"raspberrypi3-64\",\"path\":[\"env\",\"RESIN_DEVICE_TYPE\"]},\"_p_env.RESIN_DEVICE_ARCH\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_DEVICE_ARCH\",\"sample_value\":\"aarch64\",\"path\":[\"env\",\"RESIN_DEVICE_ARCH\"]},\"_p_env.RESIN_HOST_OS_VERSION\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_HOST_OS_VERSION\",\"sample_value\":\"balenaOS 2.65.0+rev1\",\"path\":[\"env\",\"RESIN_HOST_OS_VERSION\"]},\"_p_env.RESIN_APP_LOCK_PATH\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_APP_LOCK_PATH\",\"sample_value\":\"/tmp/balena/updates.lock\",\"path\":[\"env\",\"RESIN_APP_LOCK_PATH\"]},\"_p_env.RESIN\":{\"ret_value\":\"text\",\"caption\":\"env RESIN\",\"sample_value\":\"1\",\"path\":[\"env\",\"RESIN\"]},\"_p_env.RESIN_SERVICE_KILL_ME_PATH\":{\"ret_value\":\"text\",\"caption\":\"env RESIN_SERVICE_KILL_ME_PATH\",\"sample_value\":\"/tmp/balena/handover-complete\",\"path\":[\"env\",\"RESIN_SERVICE_KILL_ME_PATH\"]},\"_p_env.BALENA_SERVICE_HANDOVER_COMPLETE_PATH\":{\"ret_value\":\"text\",\"caption\":\"env BALENA_SERVICE_HANDOVER_COMPLETE_PATH\",\"sample_value\":\"/tmp/balena/handover-complete\",\"path\":[\"env\",\"BALENA_SERVICE_HANDOVER_COMPLETE_PATH\"]},\"_p_env.USER\":{\"ret_value\":\"text\",\"caption\":\"env USER\",\"sample_value\":\"root\",\"path\":[\"env\",\"USER\"]},\"_p_env.PATH\":{\"ret_value\":\"text\",\"caption\":\"env PATH\",\"sample_value\":\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"path\":[\"env\",\"PATH\"]},\"_p_env.LC_ALL\":{\"ret_value\":\"text\",\"caption\":\"env LC_ALL\",\"sample_value\":\"C.UTF-8\",\"path\":[\"env\",\"LC_ALL\"]},\"_p_env.DEBIAN_FRONTEND\":{\"ret_value\":\"text\",\"caption\":\"env DEBIAN_FRONTEND\",\"sample_value\":\"noninteractive\",\"path\":[\"env\",\"DEBIAN_FRONTEND\"]},\"_p_env.UDEV\":{\"ret_value\":\"text\",\"caption\":\"env UDEV\",\"sample_value\":\"off\",\"path\":[\"env\",\"UDEV\"]},\"_p_env.LANG\":{\"ret_value\":\"text\",\"caption\":\"env LANG\",\"sample_value\":\"C.UTF-8\",\"path\":[\"env\",\"LANG\"]},\"_p_env.PYTHON_VERSION\":{\"ret_value\":\"text\",\"caption\":\"env PYTHON_VERSION\",\"sample_value\":\"3.6.12\",\"path\":[\"env\",\"PYTHON_VERSION\"]},\"_p_env.PYTHON_PIP_VERSION\":{\"ret_value\":\"text\",\"caption\":\"env PYTHON_PIP_VERSION\",\"sample_value\":\"20.3.1\",\"path\":[\"env\",\"PYTHON_PIP_VERSION\"]},\"_p_env.SETUPTOOLS_VERSION\":{\"ret_value\":\"text\",\"caption\":\"env SETUPTOOLS_VERSION\",\"sample_value\":\"51.0.0\",\"path\":[\"env\",\"SETUPTOOLS_VERSION\"]},\"_p_env.PYTHONPATH\":{\"ret_value\":\"text\",\"caption\":\"env PYTHONPATH\",\"sample_value\":\"/usr/lib/python3/dist-packages:\",\"path\":[\"env\",\"PYTHONPATH\"]},\"_p_env.IEX_API_TOKEN\":{\"ret_value\":\"text\",\"caption\":\"env IEX_API_TOKEN\",\"sample_value\":\"\",\"path\":[\"env\",\"IEX_API_TOKEN\"]},\"_p_imageId\":{\"ret_value\":\"text\",\"caption\":\"imageId\",\"sample_value\":\"sha256:9c2cde084810991f2b5e005f85730e762bd7e3b2e0a4eafc73f62c5f65eb4825\",\"path\":[\"imageId\"]},\"_p_releaseId\":{\"ret_value\":\"number\",\"caption\":\"releaseId\",\"sample_value\":1771733,\"path\":[\"releaseId\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/apps/[appId]",
+            "url_params": {
+                "ABO": {
+                    "doc": "Application ID",
+                    "key": "appId",
+                    "private": true,
+                    "value": ""
+                }
+            }
+        },
+        "ABQ": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"method\": \"GET\"\n}",
+            "body_params": {
+                "ABR": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "data_type": "text",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#get-v1healthy",
+            "initialized": true,
+            "method": "post",
+            "name": "Device health check",
+            "no_types": true,
+            "publish_as": "data",
+            "rank": 11,
+            "should_reinitialize": true,
+            "url": "https://api.balena-cloud.com/supervisor/v1/healthy"
+        },
+        "ABS": {
+            "body": "{\n\t\"uuid\": \"<uuid>\", \n    \"method\": \"PATCH\", \n    \"data\": {\"network\": {\"hostname\": \"<newhostname>\"}}\n}",
+            "body_params": {
+                "ACF": {
+                    "doc": "Device UUID",
+                    "key": "uuid",
+                    "private": true,
+                    "value": "91bbef0787dcd1511819521b1d2611dd"
+                },
+                "ACG": {
+                    "doc": "New hostname",
+                    "key": "newhostname",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "data_type": "text",
+            "doc_link": "https://www.balena.io/docs/reference/supervisor/supervisor-api/#patch-v1devicehost-config",
+            "get_headers": false,
+            "initialized": true,
+            "method": "post",
+            "name": "Edit host config ",
+            "no_types": true,
+            "publish_as": "data",
+            "rank": 12,
+            "ret_value": "api.1619028339613x513907035776483300.plugin_api.ABS",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.ABS\":{\"caption\":\"Edit host config \",\"fields\":{\"_p_body\":{\"ret_value\":\"text\",\"caption\":\"body\",\"sample_value\":\"OK\",\"path\":[\"body\"]},\"_p_headers.date\":{\"ret_value\":\"text\",\"caption\":\"headers date\",\"sample_value\":\"Fri, 23 Apr 2021 23:45:58 GMT\",\"path\":[\"headers\",\"date\"]},\"_p_headers.content-type\":{\"ret_value\":\"text\",\"caption\":\"headers content-type\",\"sample_value\":\"text/plain; charset=utf-8\",\"path\":[\"headers\",\"content-type\"]},\"_p_headers.content-length\":{\"ret_value\":\"text\",\"caption\":\"headers content-length\",\"sample_value\":\"2\",\"path\":[\"headers\",\"content-length\"]},\"_p_headers.connection\":{\"ret_value\":\"text\",\"caption\":\"headers connection\",\"sample_value\":\"keep-alive\",\"path\":[\"headers\",\"connection\"]},\"_p_headers.x-frame-options\":{\"ret_value\":\"text\",\"caption\":\"headers x-frame-options\",\"sample_value\":\"DENY\",\"path\":[\"headers\",\"x-frame-options\"]},\"_p_headers.x-content-type-options\":{\"ret_value\":\"text\",\"caption\":\"headers x-content-type-options\",\"sample_value\":\"nosniff\",\"path\":[\"headers\",\"x-content-type-options\"]},\"_p_headers.vary\":{\"ret_value\":\"text\",\"caption\":\"headers vary\",\"sample_value\":\"X-HTTP-Method-Override, Accept-Encoding\",\"path\":[\"headers\",\"vary\"]},\"_p_headers.etag\":{\"ret_value\":\"text\",\"caption\":\"headers etag\",\"sample_value\":\"W/\\\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\\\"\",\"path\":[\"headers\",\"etag\"]}}}}",
+            "url": "https://api.balena-cloud.com/supervisor/v1/device/host-config"
         }
     },
     "human": "Balena Supervisor API",
