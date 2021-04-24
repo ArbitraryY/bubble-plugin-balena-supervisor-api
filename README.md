@@ -1,3 +1,11 @@
-This is a repository based on the [Bubble](https://bubble.io) plugin 'Bubbalena - Balena Supervisor'. This lets you use Github's functionality in terms of version control, forks and pull requests. Note that the the plugin code is stored on Bubble's servers, and you need to synchronize your repository in the Bubble Plugin Editor. 
+This is a repository based on the Bubble plugin Balena Supervisor API.
 
- This plugin can be used in [Bubble applications](https://bubble.io).
+"Balena is a complete set of tools for building, deploying, and managing fleets of connected Linux devices." More info on the Balena platform can be found here: https://www.balena.io/what-is-balena
+
+This plugin implements the Balena supervisor API and is useful for interacting with the your Balena device's supervisor(s) from a Bubble.io applicaiton.
+
+API Overview: https://www.balena.io/docs/reference/api/overview/
+
+Supervisor API: https://www.balena.io/docs/reference/supervisor/supervisor-api/
+
+This plugin can be used in Bubble applications and is best used with its sister plugin Balena Application API her: https://github.com/ArbitraryY/bubble-plugin-balena-application-api
